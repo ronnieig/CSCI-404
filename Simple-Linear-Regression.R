@@ -51,3 +51,5 @@ cor(cars$mpg, cars$disp)
 #Comma at the end to select rows, but if the comma is at the front, it will select columns
 training_data <- cars[1:16,]
 test_data <- cars[17:32,]
+
+#Build a Regression Model
