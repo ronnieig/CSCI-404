@@ -6,6 +6,10 @@
 #Get some dummy dataset
 cars <- mtcars
 
+#Check dimensions of dataset
+dim(cars)
+
+
 #head(cars) shows the first few lines of the data set
 #tails(cars) shows the bottom few lines of the data set
 head(cars)
@@ -40,3 +44,10 @@ scatter.smooth(x=cars$mpg, y=cars$gear, main="SpeedVDistance")
 #Switching the axis
 scatter.smooth(x=cars$disp, y=cars$mpg, main="SpeedVDistance")
 
+#Calculate correlation value between mgp and disp
+cor(cars$mpg, cars$disp)
+
+#Split training and testing data for regression
+#Comma at the end to select rows, but if the comma is at the front, it will select columns
+training_data <- cars[1:16,]
+test_data <- cars[17:32,]
