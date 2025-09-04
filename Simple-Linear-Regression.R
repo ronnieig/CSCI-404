@@ -30,9 +30,9 @@ tail(cars)
 #Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
 #Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
 #Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
-#Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2
+#Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2test
 
-#dim(cars) shows how many rows and then colums there are in the dataset
+#dim(cars) shows how many rows and then columns there are in the dataset
 dim(cars)
 
 #Scatter plot on training data
@@ -53,3 +53,10 @@ training_data <- cars[1:16,]
 test_data <- cars[17:32,]
 
 #Build a Regression Model
+regression_result <- lm(mpg ~ disp, data=training_data)
+
+#Predict regression function on test data
+prediction_result <- predict(regression_result, test_data)
+
+#Results of prediction
+actual_prediction_values <- data.frame(cbind(actuals=training_data$mpg, predicteds=prediction_result))
